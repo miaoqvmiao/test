@@ -22,7 +22,7 @@
         scene.add(cube);
         camera.position.z = 5;
         function r() {
-            requestAnimationFrame(render);
+            requestAnimationFrame(r);
             geometry.rotateX(10);
             geometry.rotateY(10);
             geometry.rotateZ(10);
