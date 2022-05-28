@@ -5,7 +5,7 @@
     <style>canvas { width: 100%; height: 100% }</style>
     <script src="./js/three.js"></script>
 </head>
-<body>
+<body onload="r()">
     <script>
         var scene = new THREE.Scene();
       
@@ -17,18 +17,17 @@
         
         document.body.appendChild(renderer.domElement);
         var geometry = new THREE.BoxGeometry(1,1,1);
-        var material = new THREE.MeshBasicMaterial({color: 0x00ff00});
+        var material = new THREE.MeshLambertMaterial({color: 0x00ff00});
         var cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
         camera.position.z = 5;
         function r() {
             requestAnimationFrame(r);
-            geometry.rotateX(10);
-            geometry.rotateY(10);
-            geometry.rotateZ(10);
+            geometry.rotateX(1);
+            geometry.rotateY(1);
+            geometry.rotateZ(1);
             renderer.render(scene, camera);
         }
-        r();
     </script>
 </body>
 </html>
