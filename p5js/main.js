@@ -1,9 +1,14 @@
 function setup(){
-  createCanvas(400,400)
+  createCanvas(document.body.clientHeith,document.body.clientWidth)
 }
 function draw(){
-  line(1,1,1,399)
-  line(1,399,399,399)
-  line(399,399,399,1)
-  line(399,1,1,1)
+  background(0)
+  fill(255)
+  var w = document.body.clientWidth-1
+  var h = document.body.clientHidth-1
+  fill(255)
+  line(1,1,1,w)
+  line(1,w,w,h)
+  line(w,h,w,1)
+  line(w,1,1,1)
 }
