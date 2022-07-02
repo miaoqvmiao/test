@@ -1,11 +1,11 @@
 function setup(){
-  createCanvas(document.body.clientHeith,document.body.clientWidth)
+  createCanvas(700,700)
 }
 function draw(){
   background(0)
   fill(255)
-  var w = document.body.clientWidth-1
-  var h = document.body.clientHidth-1
+  var w = width-1
+  var h = heith-1
   fill(255)
   line(1,1,1,w)
   line(1,w,w,h)
