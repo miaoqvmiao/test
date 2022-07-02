@@ -5,7 +5,7 @@ function draw(){
   background(0)
   fill(255)
   var w = width-1
-  var h = heith-1
+  var h = height-1
   fill(255)
   line(1,1,1,w)
   line(1,w,w,h)
