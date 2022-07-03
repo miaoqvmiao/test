@@ -38,6 +38,7 @@ ellipse(320,320.7,7)
 function draw(){
   
 }
+/*
 function mousePressed(){
   if (mouseX <= height && mouseY <= width){
     chessmanX,chessmanY = mouseX,mouseY
@@ -55,3 +56,4 @@ function mousePressed(){
     }
   }
 }
+*/
