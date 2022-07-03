@@ -57,3 +57,4 @@ function mousePressed(){
   }
 }
 */
+window.onerror = function ()
