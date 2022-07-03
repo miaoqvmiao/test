@@ -1,6 +1,7 @@
 function setup(){
-  createCanvas(650，650)
-  background(255,193,37)
+  createCanvas(680，680)
+  background(255,255,255)
+  fill(255,193,37)
   strokeWeight(3)
   var w = width-1
   var h = height-1
@@ -12,6 +13,7 @@ function setup(){
   for (;i < 12;i++){
      line(2,(h/13)*i,w,(h/13)*i)
   }
+  rect(0,0,680,680,25)
 }
 function draw(){
   
