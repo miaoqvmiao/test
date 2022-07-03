@@ -6,9 +6,9 @@ function setup(){
   var w = width-1
   var h = height-1
   let i = 1
-  rect(0,0,680,680,25,25,25,25)
+  rect(0,0,640,640,25,25,25,25)
   for (;i < 12;i++){
-     line((w/13)*i,2,(w/13)*i,h)
+     line((w/12)*i,2,(w/12)*i,h)
   }
   i = 1
   for (;i < 12;i++){
