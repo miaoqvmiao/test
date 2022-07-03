@@ -4,11 +4,10 @@ function setup(){
   strokeWeight(3)
 }
 function draw(){
-  noFill()
   var w = width-1
   var h = height-1
   rect(0,0,650,650)
-  for (let i;i = 13;i++){
+  for (let i;i < 13 || i = 13;i++){
      line((w/13)*i,1,(w/13)*i,h)
   }
 }
