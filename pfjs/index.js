@@ -33,7 +33,8 @@ function setup(){
      line(2,(h/14)*i,w,(h/14)*i)
   }
 }
-ellipse(320,320,5,5)
+fill(0,0,0)
+ellipse(320,320,7,7)
 function draw(){
   
 }
