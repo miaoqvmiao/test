@@ -34,12 +34,24 @@ function setup(){
   }
 }
 fill(0,0,0)
-ellipse(320,320,7,7)
+ellipse(320,320.7,7)
 function draw(){
   
 }
 function mousePressed(){
   if (mouseX <= height && mouseY <= width){
-    chessmanX = 0
+    chessmanX,chessmanY = mouseX,mouseY
+    chessmanX = Math.round(chessmanX)
+    chessmanY = Math.round(chessmanY)
+    if (chessboard[chessmanX][chessmanY] == 0){
+      if (isBlack == 1){
+        fill(0,0,0)
+        ellipse(chessmanX,chessmanY.15,15)
+      }else{
+        fill(250,250,250)
+        ellipse(chessmanX,chessmanY.15,15)
+      }
+      
+    }
   }
 }
