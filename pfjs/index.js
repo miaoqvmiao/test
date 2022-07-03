@@ -1,5 +1,5 @@
 function setup(){
-  createCanvas(700,700)
+  createCanvas(650，650)
   background(255,193,37)
   strokeWeight(3)
   var w = width-1
