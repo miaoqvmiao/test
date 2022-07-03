@@ -11,7 +11,7 @@ function setup(){
   }
   i = 1
   for (;i < 14;i++){
-     line((1,(h/13)*i,w,(h/13)*i)
+     line(1,(h/13)*i,w,(h/13)*i)
   }
 }
 function draw(){
