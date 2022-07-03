@@ -1,9 +1,10 @@
 function setup(){
-  createCanvas(720,720)
+  createCanvas(700,700)
   background(255,193,37)
   strokeWeight(3)
 }
 function draw(){
+  fill(255,255,255)
   var w = width-1
   var h = height-1
   line(1,1,1,w)
