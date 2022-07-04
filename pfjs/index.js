@@ -15,9 +15,17 @@ var isBlack = 1,
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+                  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],
+var wt = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+
 function setup(){
-  createCanvas(640,640)
+  if (navigator.userAgent.indexOf('Android') == -1){
+    createCanvas(640,640)
+  }esle{
+    
+  }
   background(255,255,255)
   fill(238,154,73)
   strokeWeight(3)
