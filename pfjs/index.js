@@ -51,7 +51,7 @@ function onmousedown(){
         chessboard[chessmanY][chessmanX] = 1
       }else{
         fill(250,250,250)
-        ellipse(chessmanX,chessmanY.15,15)
+        ellipse(chessmanX,chessmanY,15,15)
         chessboard[chessmanY][chessmanX] = 2
       }
       
