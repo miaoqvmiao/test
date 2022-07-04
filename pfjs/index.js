@@ -39,7 +39,7 @@ function draw(){
   
 }
 
-function mousePressed(){
+function onmousedown(){
   if (mouseX <= height && mouseY <= width){
     chessmanX,chessmanY = mouseX,mouseY
     chessmanX = Math.round(chessmanX)
