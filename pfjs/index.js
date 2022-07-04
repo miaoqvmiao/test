@@ -32,9 +32,9 @@ function setup(){
   for (;i < 14;i++){
      line(2,(h/14)*i,w,(h/14)*i)
   }
+  fill(0,0,0)
+  ellipse(320,320.7,7)
 }
-fill(0,0,0)
-ellipse(320,320.7,7)
 function draw(){
   
 }
