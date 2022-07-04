@@ -57,4 +57,4 @@ function mousePressed(){
   }
 }
 */
-window.onerror = function (msg,url,l){alert(msg + 'url:' + url + 'line:' + l)}
+window.onerror = function (msg,url,l){alert(msg + '\nurl:' + url + '\nline:' + l)}
