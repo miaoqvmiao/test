@@ -33,7 +33,7 @@ function setup(){
      line(2,(h/14)*i,w,(h/14)*i)
   }
   fill(0,0,0)
-  ellipse(320,320.7,7)
+  ellipse(320,320,7,7)
 }
 function draw(){
   
@@ -47,7 +47,7 @@ function onmousedown(){
     if (chessboard[chessmanX][chessmanY] == 0){
       if (isBlack == 1){
         fill(0,0,0)
-        ellipse(chessmanX,chessmanY.15,15)
+        ellipse(chessmanX,chessmanY,15,15)
         chessboard[chessmanY][chessmanX] = 1
       }else{
         fill(250,250,250)
