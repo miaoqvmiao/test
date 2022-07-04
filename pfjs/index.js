@@ -38,7 +38,7 @@ function setup(){
 function draw(){
   
 }
-/*
+
 function mousePressed(){
   if (mouseX <= height && mouseY <= width){
     chessmanX,chessmanY = mouseX,mouseY
@@ -48,13 +48,15 @@ function mousePressed(){
       if (isBlack == 1){
         fill(0,0,0)
         ellipse(chessmanX,chessmanY.15,15)
+        chessboard[chessmanY][chessmanX] = 1
       }else{
         fill(250,250,250)
         ellipse(chessmanX,chessmanY.15,15)
+        chessboard[chessmanY][chessmanX] = 2
       }
       
     }
   }
 }
-*/
+
 window.onerror = function (msg,url,l){alert(msg + '\nurl:' + url + '\nline:' + l)}
