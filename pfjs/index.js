@@ -60,12 +60,12 @@ onmousedown = function(){
     if (chessboard[chessmanY][chessmanX] == 0){
       if (isBlack == 1){
         fill(0,0,0)
-        ellipse(chessmanX,chessmanY,chessmanW,chessmanH)
+        ellipse(chessmanX * (wth / 14),chessmanY * (ht / 14),chessmanW,chessmanH)
         chessboard[chessmanY][chessmanX] = 1
         isBlack = 0
       }else{
         fill(250,250,250)
-        ellipse(chessmanX,chessmanY,chessmanW,chessmanH)
+        ellipse(chessmanX * (wth / 14),chessmanY * (ht / 14),chessmanW,chessmanH)
         chessboard[chessmanY][chessmanX] = 2
         isBlack = 1
       }
