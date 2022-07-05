@@ -18,7 +18,9 @@ var isBlack = 1,
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],
     wt = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
     chessmanW = 15,
-    chessmanH = 15
+    chessmanH = 15,
+    wt,
+    ht
 
 function setup(){
   if (navigator.userAgent.indexOf('Android') == -1){
@@ -30,6 +32,8 @@ function setup(){
   fill(238,154,73)
   strokeWeight(3)
   let i = 1
+  var w = width-1
+  var h = height-1
   rect(0,0,height,width,25,25,25,25)
   for (;i < 14;i++){
      line((w/14)*i,2,(w/14)*i,h)
@@ -40,17 +44,18 @@ function setup(){
   }
   fill(0,0,0)
   ellipse(320,320,7,7)
+  wt = w + 1
+  ht = h + 1
 }
-var w = width-1
-var h = height-1
+
 function draw(){
   
 }
 
 onmousedown = function(){
   if (mouseX <= height && mouseY <= width){
-    chessmanX = Math.abs(Math.round((mouseX - ((w + 1) / 14) / 2) / chessmanW))
-    chessmanY = Math.abs(Math.round((mouseY - ((h + 1) / 14) / 2) / chessmanH))
+    chessmanX = Math.abs(Math.round((mouseX - ((wt + 0) / 14) / 2) / chessmanW))
+    chessmanY = Math.abs(Math.round((mouseY - ((ht + 0) / 14) / 2) / chessmanH))
     if (chessboard[chessmanX][chessmanY] == 0){
       if (isBlack == 1){
         fill(0,0,0)
@@ -68,6 +73,4 @@ onmousedown = function(){
   }
 }
 
-window.onerror = function (message,url,line){
-  alert(message + '\nURL:' + url + '\nLine:' + line)
-}
+window.onerror = (message,url,line) => {alert(message + '\nURL:' + url + '\nLine:' + line)}
