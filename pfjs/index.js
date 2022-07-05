@@ -16,7 +16,7 @@ var isBlack = 1,
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],
-    wt = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+    wt = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
     chessmanW = 15,
     chessmanH = 15,
     wth,
