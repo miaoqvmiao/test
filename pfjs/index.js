@@ -46,7 +46,7 @@ function setup(){
 function draw(){
   
 }
-/*
+
 function onmousedown(){
   if (mouseX <= height && mouseY <= width){
     chessmanX,chessmanY = mouseX,mouseY
@@ -66,7 +66,7 @@ function onmousedown(){
     }
   }
 }
-*/
-onerror = function (msg,url,l){
-  alert(msg + '\nurl:' + url + '\nline:' + l)
+
+window.onerror = function (message,url,line){
+  alert(message + '\nURL:' + url + '\nLine:' + line)
 }
