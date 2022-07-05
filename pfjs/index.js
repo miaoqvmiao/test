@@ -47,7 +47,7 @@ function draw(){
   
 }
 
-function onmousedown(){
+onmousedown = function(){
   if (mouseX <= height && mouseY <= width){
     chessmanX = Math.abs(Math.round((mouseX - (w / 14) / 2) / chessmanW))
     chessmanY = Math.abs(Math.round((mouseY - (h / 14) / 2) / chessmanH))
@@ -63,7 +63,7 @@ function onmousedown(){
         chessboard[chessmanY][chessmanX] = 2
         isBlack = 1
       }
-      
+      console.log(chessboard) 
     }
   }
 }
