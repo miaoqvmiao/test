@@ -19,7 +19,7 @@ var isBlack = 1,
     wt = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
     chessmanW = 15,
     chessmanH = 15,
-    wt,
+    wth,
     ht
 
 function setup(){
@@ -44,7 +44,7 @@ function setup(){
   }
   fill(0,0,0)
   ellipse(320,320,7,7)
-  wt = w + 1
+  wth = w + 1
   ht = h + 1
 }
 
@@ -54,7 +54,7 @@ function draw(){
 
 onmousedown = function(){
   if (mouseX <= height && mouseY <= width){
-    chessmanX = Math.abs(Math.round((mouseX - ((wt + 0) / 14) / 2) / chessmanW))
+    chessmanX = Math.abs(Math.round((mouseX - ((wth + 0) / 14) / 2) / chessmanW))
     chessmanY = Math.abs(Math.round((mouseY - ((ht + 0) / 14) / 2) / chessmanH))
     if (chessboard[chessmanX][chessmanY] == 0){
       if (isBlack == 1){
