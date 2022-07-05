@@ -1,6 +1,6 @@
 var isBlack = 1,
     chessmanX,
-    chessmanY
+    chessmanY,
     chessboard = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -16,7 +16,7 @@ var isBlack = 1,
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],
-var wt = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+var wt = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
 
 function setup(){
   if (navigator.userAgent.indexOf('Android') == -1){
