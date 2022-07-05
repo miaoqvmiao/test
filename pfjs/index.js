@@ -17,11 +17,13 @@ var isBlack = 1,
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],
     wt = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+    chessmanW = 15,
+    chessmanH = 15
 
 function setup(){
   if (navigator.userAgent.indexOf('Android') == -1){
     createCanvas(640,640)
-  }esle{
+  }else{
     createCanvas(wt,wt)
   }
   background(255,255,255)
@@ -47,18 +49,19 @@ function draw(){
 
 function onmousedown(){
   if (mouseX <= height && mouseY <= width){
-    chessmanX,chessmanY = mouseX,mouseY
-    chessmanX = Math.round(chessmanX)
-    chessmanY = Math.round(chessmanY)
+    chessmanX = Math.abs(Math.round((mouseX - (w / 14) / 2) / chessmanW))
+    chessmanY = Math.abs(Math.round((mouseY - (h / 14) / 2) / chessmanH))
     if (chessboard[chessmanX][chessmanY] == 0){
       if (isBlack == 1){
         fill(0,0,0)
         ellipse(chessmanX,chessmanY,15,15)
         chessboard[chessmanY][chessmanX] = 1
+        isBlack = 0
       }else{
         fill(250,250,250)
         ellipse(chessmanX,chessmanY,15,15)
         chessboard[chessmanY][chessmanX] = 2
+        isBlack = 1
       }
       
     }
