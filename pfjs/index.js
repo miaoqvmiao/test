@@ -29,8 +29,6 @@ function setup(){
   background(255,255,255)
   fill(238,154,73)
   strokeWeight(3)
-  var w = width-1
-  var h = height-1
   let i = 1
   rect(0,0,height,width,25,25,25,25)
   for (;i < 14;i++){
@@ -43,14 +41,16 @@ function setup(){
   fill(0,0,0)
   ellipse(320,320,7,7)
 }
+var w = width-1
+var h = height-1
 function draw(){
   
 }
 
 onmousedown = function(){
   if (mouseX <= height && mouseY <= width){
-    chessmanX = Math.abs(Math.round((mouseX - (w / 14) / 2) / chessmanW))
-    chessmanY = Math.abs(Math.round((mouseY - (h / 14) / 2) / chessmanH))
+    chessmanX = Math.abs(Math.round((mouseX - ((w + 1) / 14) / 2) / chessmanW))
+    chessmanY = Math.abs(Math.round((mouseY - ((h + 1) / 14) / 2) / chessmanH))
     if (chessboard[chessmanX][chessmanY] == 0){
       if (isBlack == 1){
         fill(0,0,0)
