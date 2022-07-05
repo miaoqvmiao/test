@@ -24,7 +24,7 @@ function setup(){
   if (navigator.userAgent.indexOf('Android') == -1){
     createCanvas(640,640)
   }esle{
-    
+    createCanvas(wt,wt)
   }
   background(255,255,255)
   fill(238,154,73)
