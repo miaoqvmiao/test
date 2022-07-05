@@ -57,16 +57,16 @@ onmousedown = function(){
   if (mouseX <= height && mouseY <= width){
     chessmanX = Math.abs(Math.round((mouseX - ((wth + 0) / 14) / 2) / chessmanW))
     chessmanY = Math.abs(Math.round((mouseY - ((ht + 0) / 14) / 2) / chessmanH))
-    if (chessboard[chessmanY][chessmanX] == 0){
+    if (chessboard[chessmanY - 1][chessmanX - 1] == 0){
       if (isBlack == 1){
         fill(0,0,0)
         ellipse(chessmanX * (wth / 14),chessmanY * (ht / 14),chessmanW,chessmanH)
-        chessboard[chessmanY][chessmanX] = 1
+        chessboard[chessmanY - 1][chessmanX - 1] = 1
         isBlack = 0
       }else{
         fill(250,250,250)
         ellipse(chessmanX * (wth / 14),chessmanY * (ht / 14),chessmanW,chessmanH)
-        chessboard[chessmanY][chessmanX] = 2
+        chessboard[chessmanY - 1][chessmanX - 1] = 2
         isBlack = 1
       }
       console.log(chessboard) 
