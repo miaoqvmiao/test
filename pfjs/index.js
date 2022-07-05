@@ -32,7 +32,7 @@ function setup(){
   var w = width-1
   var h = height-1
   let i = 1
-  rect(0,0,640,640,25,25,25,25)
+  rect(0,0,height,width,25,25,25,25)
   for (;i < 14;i++){
      line((w/14)*i,2,(w/14)*i,h)
   }
