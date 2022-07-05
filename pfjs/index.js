@@ -17,8 +17,8 @@ var isBlack = 1,
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],
     wt = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-    chessmanW = 15,
-    chessmanH = 15,
+    chessmanW = 20,
+    chessmanH = 20,
     wth,
     ht
 
@@ -53,24 +53,26 @@ function draw(){
 }
 
 onmousedown = function(){
+  noStroke()
   if (mouseX <= height && mouseY <= width){
     chessmanX = Math.abs(Math.round((mouseX - ((wth + 0) / 14) / 2) / chessmanW))
     chessmanY = Math.abs(Math.round((mouseY - ((ht + 0) / 14) / 2) / chessmanH))
-    if (chessboard[chessmanX][chessmanY] == 0){
+    if (chessboard[chessmanY][chessmanX] == 0){
       if (isBlack == 1){
         fill(0,0,0)
-        ellipse(chessmanX,chessmanY,15,15)
+        ellipse(chessmanX,chessmanY,chessmanW,chessmanH)
         chessboard[chessmanY][chessmanX] = 1
         isBlack = 0
       }else{
         fill(250,250,250)
-        ellipse(chessmanX,chessmanY,15,15)
+        ellipse(chessmanX,chessmanY,chessmanW,chessmanH)
         chessboard[chessmanY][chessmanX] = 2
         isBlack = 1
       }
       console.log(chessboard) 
     }
   }
+  strokeWeight(3)
 }
 
 window.onerror = (message,url,line) => {alert(message + '\nURL:' + url + '\nLine:' + line)}
