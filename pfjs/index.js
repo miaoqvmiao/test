@@ -48,7 +48,6 @@ function draw(){
 }
 
 onmousedown = function(){
-  var nIsBlack = isBlack
   noStroke()
   if (mouseX <= height && mouseY <= width){
     chessmanX = Math.round((mouseX + chessmanW / 2) / (wth / 14))
@@ -69,6 +68,7 @@ onmousedown = function(){
       }
       console.log(chessboard)
       /*Who is winner*/
+      var nIsBlack = isBlack
       try{
         var num = 1
         for (let i = 1;i <= 4;i++){
@@ -109,7 +109,7 @@ onmousedown = function(){
           winner.style.top = "0px"
           winner.style.left = '0px'
           document.body.appendChild(winner)
-          console.log(document.createTextNode(colorr[niIsBlack-1] + "WIN！"))
+          console.log(document.createTextNode(colorr[nIsBlack-1] + "WIN！"))
           return 1
         }
         num = 1
