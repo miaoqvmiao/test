@@ -69,7 +69,7 @@ onmousedown = function(){
       console.log(chessboard)
       /*Who is winner*/
       var nIsBlack = isBlack
-      for (let i in (0)){
+      for (let j of [0]){
         var num = 1
         for (let i = 1;i <= 4;i++){
           try{
