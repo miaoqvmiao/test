@@ -47,27 +47,8 @@ function draw(){
   
 }
 
-var times = function (x,y,xd,yd){
-  var timess = 0
-  try{
-    for (let i = 1;i <= 4;i++){
-      if (chessboard[y + yd * i][x + xd * i] == isBlack){
-        timess += 1
-      }else{
-        if (chessboard[y - yd * i][x - xd * i] == isBlack){
-          timess += 1
-        }else{
-          timess += 0
-        }
-      }
-    }
-    return timess
-  }catch(err){
-    console.log(err)
-  }
-}
-
 onmousedown = function(){
+  var nisBlack = isBlack
   noStroke()
   if (mouseX <= height && mouseY <= width){
     chessmanX = Math.round((mouseX + chessmanW / 2) / (wth / 14))
@@ -87,23 +68,90 @@ onmousedown = function(){
         isBlack = 1
       }
       console.log(chessboard)
-      var axis
+      /*Who is winner*/
       var num = 1
-      for (axis in dirction){
-        var xd = axis[0],yd = axis[1]
-        num += times(chessmanX,chessmanY,xd,yd)
-        console.log(num)
-        if (num >= 5){
-          var winner = document.createElement("H1")
-          winner.appendChild(document.createTextNode(colorr[isBlack-1] + "WIN！"))
-          winner.style.color = "red"
-          winner.style.top = "0px"
-          winner.style.left = '0px'
-          document.body.appendChild(winner)
-          console.log(document.createTextNode(colorr[isBlack-1] + "WIN！"))
-          return 1
+      for (let i = 1;i <= 8;i++){
+        if (chessboard[chessmanY + i][chessmanX + i] === nIsBlack){
+          num++
         }
-        num = 1
+      }
+      for (let i = 1;i <= 8;i++){
+        if (chessboard[chessmanY - i][chessmanX - i] === nIsBlack){
+          num++
+        }
+      }
+      if (num >= 5){
+        var winner = document.createElement("H1")
+        winner.appendChild(document.createTextNode(colorr[nIsBlack-1] + "WIN！"))
+        winner.style.color = "red"
+        winner.style.top = "0px"
+        winner.style.left = '0px'
+        document.body.appendChild(winner)
+        console.log(document.createTextNode(colorr[nIsBlack-1] + "WIN！"))
+        return 1
+      }
+      num = 1
+      for (let i = 1;i <= 8;i++){
+        if (chessboard[chessmanY - i][chessmanX + i] === nIsBlack){
+          num++
+        }
+      }
+      for (let i = 1;i <= 8;i++){
+        if (chessboard[chessmanY + i][chessmanX - i] === nIsBlack){
+          num++
+        }
+      }
+      if (num >= 5){
+        var winner = document.createElement("H1")
+        winner.appendChild(document.createTextNode(colorr[nIsBlack-1] + "WIN！"))
+        winner.style.color = "red"
+        winner.style.top = "0px"
+        winner.style.left = '0px'
+        document.body.appendChild(winner)
+        console.log(document.createTextNode(colorr[niIsBlack-1] + "WIN！"))
+        return 1
+      }
+      num = 1
+      for (let i = 1;i <= 8;i++){
+        if (chessboard[chessmanY][chessmanX + i] === nIsBlack){
+          num++
+        }
+      }
+      for (let i = 1;i <= 8;i++){
+        if (chessboard[chessmanY][chessmanX - i] === nIsBlack){
+          num++
+        }
+      }
+      if (num >= 5){
+        var winner = document.createElement("H1")
+        winner.appendChild(document.createTextNode(colorr[nIsBlack-1] + "WIN！"))
+        winner.style.color = "red"
+        winner.style.top = "0px"
+        winner.style.left = '0px'
+        document.body.appendChild(winner)
+        console.log(document.createTextNode(colorr[nIsBlack-1] + "WIN！"))
+        return 1
+      }
+      num = 1
+      for (let i = 1;i <= 8;i++){
+        if (chessboard[chessmanY - i][chessmanX] === nIsBlack){
+          num++
+        }
+      }
+      for (let i = 1;i <= 8;i++){
+        if (chessboard[chessmanY + i][chessmanX] === nIsBlack){
+          num++
+        }
+      }
+      if (num >= 5){
+        var winner = document.createElement("H1")
+        winner.appendChild(document.createTextNode(colorr[nIsBlack-1] + "WIN！"))
+        winner.style.color = "red"
+        winner.style.top = "0px"
+        winner.style.left = '0px'
+        document.body.appendChild(winner)
+        console.log(document.createTextNode(colorr[nIsBlack-1] + "WIN！"))
+        return 1
       }
     }
   }
