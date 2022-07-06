@@ -69,16 +69,24 @@ onmousedown = function(){
       console.log(chessboard)
       /*Who is winner*/
       var nIsBlack = isBlack
-      try{
+      for (let i in (0)){
         var num = 1
         for (let i = 1;i <= 4;i++){
-          if (chessboard[chessmanY + i][chessmanX + i] === chessboard[chessmanY][chessmanX]){
-            num++
+          try{
+            if (chessboard[chessmanY + i][chessmanX + i] === chessboard[chessmanY][chessmanX]){
+              num++
+            }
+          catch(err){
+            break
           }
         }
         for (let i = 1;i <= 4;i++){
-          if (chessboard[chessmanY - i][chessmanX - i] === chessboard[chessmanY][chessmanX]){
-            num++
+          try{
+            if (chessboard[chessmanY - i][chessmanX - i] === chessboard[chessmanY][chessmanX]){
+              num++
+            }
+          catch(err){
+            break
           }
         }
         if (num >= 5){
@@ -93,13 +101,21 @@ onmousedown = function(){
         }
         num = 1
         for (let i = 1;i <= 4;i++){
-          if (chessboard[chessmanY - i][chessmanX + i] === chessboard[chessmanY][chessmanX]){
-            num++
+          try{
+            if (chessboard[chessmanY - i][chessmanX + i] === chessboard[chessmanY][chessmanX]){
+              num++
+            }
+          catch(err){
+            break
           }
         }
         for (let i = 1;i <= 4;i++){
-          if (chessboard[chessmanY + i][chessmanX - i] === chessboard[chessmanY][chessmanX]){
-            num++
+          try{
+            if (chessboard[chessmanY + i][chessmanX - i] === chessboard[chessmanY][chessmanX]){
+              num++
+            }
+          catch(err){
+            break
           }
         }
         if (num >= 5){
@@ -114,13 +130,21 @@ onmousedown = function(){
         }
         num = 1
         for (let i = 1;i <= 4;i++){
-          if (chessboard[chessmanY][chessmanX + i] === chessboard[chessmanY][chessmanX]){
-            num++
+          try{
+            if (chessboard[chessmanY][chessmanX + i] === chessboard[chessmanY][chessmanX]){
+              num++
+            }
+          catch(err){
+            break
           }
         }
         for (let i = 1;i <= 4;i++){
-          if (chessboard[chessmanY][chessmanX - i] === chessboard[chessmanY][chessmanX]){
-            num++
+          try{
+            if (chessboard[chessmanY][chessmanX - i] === chessboard[chessmanY][chessmanX]){
+              num++
+            }
+          catch(err){
+            break
           }
         }
         if (num >= 5){
@@ -135,13 +159,21 @@ onmousedown = function(){
         }
         num = 1
         for (let i = 1;i <= 4;i++){
-          if (chessboard[chessmanY - i][chessmanX] === chessboard[chessmanY][chessmanX]){
-            num++
+          try{
+            if (chessboard[chessmanY - i][chessmanX] === chessboard[chessmanY][chessmanX]){
+              num++
+            }
+          catch(err){
+            break
           }
         }
         for (let i = 1;i <= 4;i++){
-          if (chessboard[chessmanY + i][chessmanX] === chessboard[chessmanY][chessmanX]){
-            num++
+          try{
+            if (chessboard[chessmanY + i][chessmanX] === chessboard[chessmanY][chessmanX]){
+              num++
+            }
+          catch(err){
+            break
           }
         }
         if (num >= 5){
@@ -154,8 +186,6 @@ onmousedown = function(){
           console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
           return 1
         }
-      }catch(err){
-        console.log(err)
       }
     }
   }
