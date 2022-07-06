@@ -75,19 +75,20 @@ onmousedown = function(){
       }
       console.log(chessboard)
       var axis
+      var num = 1
       for (axis of dirction){
-        var num = 1
         var xd = axis[0],yd = axis[1],iii
         for (iii in [0,0,0,0]){
           num += times(chessmanX,chessmanY,xd,yd,isBlack)
         }
-        if (num == 5){
+        if (num >= 5){
           var winner = document.createElement("H1")
           winner.appendChild(document.createTextNode(colorr[isBlack-1] + "WIN！"))
           winner.getAttributeNode("style").value="color:red"
           winner.style.top = "100px"
           document.body.appendChild(winner)
           console.log(document.createTextNode(colorr[isBlack-1] + "WIN！"))
+          return 1
         }
       }
     }
