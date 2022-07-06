@@ -46,17 +46,17 @@ function draw(){
 onmousedown = function(){
   noStroke()
   if (mouseX <= height && mouseY <= width){
-    chessmanX = Number(Math.abs(Math.round((mouseX - ((wth + 0) / 14) / 2) / chessmanW)))
-    chessmanY = Number(Math.abs(Math.round((mouseY - ((ht + 0) / 14) / 2) / chessmanH)))
+    chessmanX = Number(Math.abs(Math.round((mouseX - (wth / 14 / 2) / chessmanW)))
+    chessmanY = Number(Math.abs(Math.round((mouseY - (ht / 14 / 2) / chessmanH)))
     if (chessboard[chessmanY - 1][chessmanX - 1] == 0){
       if (isBlack == 1){
         fill(0,0,0)
-        ellipse(chessmanX * (wth / 14 / 2),chessmanY * (ht / 14 / 2),chessmanW,chessmanH)
+        ellipse(chessmanX * (wth / 14),chessmanY * (ht / 14),chessmanW,chessmanH)
         chessboard[chessmanY - 1][chessmanX - 1] = 1
         isBlack = 0
       }else{
         fill(250,250,250)
-        ellipse(chessmanX * (wth / 14 / 2),chessmanY * (ht / 14 / 2),chessmanW,chessmanH)
+        ellipse(chessmanX * (wth / 14),chessmanY * (ht / 14),chessmanW,chessmanH)
         chessboard[chessmanY - 1][chessmanX - 1] = 2
         isBlack = 1
       }
