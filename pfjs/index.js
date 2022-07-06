@@ -47,12 +47,13 @@ function draw(){
   
 }
 
-var times = function (x,y,xd,yd,chessmanColor){
+var times = function (x,y,xd,yd){
    try{
-     if (chessboard[y + yd][x + xd] == chessmanColor){
+     if (chessboard[y + yd][x + xd] == isBlack){
        return 1
+     }else{
+       return 0
      }
-     return 0
    }catch(err){
      console.log('Oh, here\'s the edge.')
    }
@@ -83,12 +84,12 @@ onmousedown = function(){
       for (axis of dirction){
         var xd = axis[0],yd = axis[1],iii
         for (iii in [0,0,0,0]){
-          num += times(chessmanX,chessmanY,xd,yd,isBlack)
+          num += times(chessmanX,chessmanY,xd,yd)
         }
         if (num >= 5){
           var winner = document.createElement("H1")
           winner.appendChild(document.createTextNode(colorr[isBlack-1] + "WIN！"))
-          winner.style.top = "red"
+          winner.style.color = "red"
           winner.style.top = "100px"
           document.body.appendChild(winner)
           console.log(document.createTextNode(colorr[isBlack-1] + "WIN！"))
