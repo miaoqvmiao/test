@@ -8,7 +8,9 @@ var isBlack = 1,
     wth,
     ht,
     realX,
-    realY
+    realY,
+    dirction = [[1,0],[0,1],[1,1],[-1,1],[1,-1],[0,-1],[-1,0],[1,-1]],
+    color = ['Black','White']
 
 function setup(){
   if (navigator.userAgent.indexOf('Android') == -1){
@@ -45,6 +47,13 @@ function draw(){
   
 }
 
+var times = function (x,y,xd,yd,chessmanColor){
+   if (chessboard[y + yd][x + xd] == chessmanColor){
+     return 1
+   }
+   return 0
+}
+
 onmousedown = function(){
   noStroke()
   if (mouseX <= height && mouseY <= width){
@@ -57,14 +66,26 @@ onmousedown = function(){
         fill(0,0,0)
         ellipse(realX,realY,chessmanW,chessmanH)
         chessboard[chessmanY][chessmanX] = 1
-        isBlack = 0
+        isBlack = 2
       }else{
         fill(250,250,250)
         ellipse(realX,realY,chessmanW,chessmanH)
         chessboard[chessmanY][chessmanX] = 2
         isBlack = 1
       }
-      console.log(chessboard) 
+      console.log(chessboard)
+      var axis
+      for (axis of dirction){
+        var num = 1
+        var xd = axis[0],yd = axis[1],iii
+        for (iii in [0,0,0,0]){
+          num += times(chessmanX,chessmanY,xd,yd,isBlack)
+        }
+        if (num == 5){
+          var winner = document.createElement("H1")
+          winner.appendChild(document.createTextNode(color[isBlack-1] + "WIN！"))
+        }
+      }
     }
   }
   strokeWeight(3)
