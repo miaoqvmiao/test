@@ -70,12 +70,12 @@ onmousedown = function(){
       console.log(chessboard)
       /*Who is winner*/
       var num = 1
-      for (let i = 1;i <= 8;i++){
+      for (let i = 1;i <= 4;i++){
         if (chessboard[chessmanY + i][chessmanX + i] === nIsBlack){
           num++
         }
       }
-      for (let i = 1;i <= 8;i++){
+      for (let i = 1;i <= 4;i++){
         if (chessboard[chessmanY - i][chessmanX - i] === nIsBlack){
           num++
         }
@@ -91,12 +91,12 @@ onmousedown = function(){
         return 1
       }
       num = 1
-      for (let i = 1;i <= 8;i++){
+      for (let i = 1;i <= 4;i++){
         if (chessboard[chessmanY - i][chessmanX + i] === nIsBlack){
           num++
         }
       }
-      for (let i = 1;i <= 8;i++){
+      for (let i = 1;i <= 4;i++){
         if (chessboard[chessmanY + i][chessmanX - i] === nIsBlack){
           num++
         }
@@ -112,12 +112,12 @@ onmousedown = function(){
         return 1
       }
       num = 1
-      for (let i = 1;i <= 8;i++){
+      for (let i = 1;i <= 4;i++){
         if (chessboard[chessmanY][chessmanX + i] === nIsBlack){
           num++
         }
       }
-      for (let i = 1;i <= 8;i++){
+      for (let i = 1;i <= 4;i++){
         if (chessboard[chessmanY][chessmanX - i] === nIsBlack){
           num++
         }
@@ -133,12 +133,12 @@ onmousedown = function(){
         return 1
       }
       num = 1
-      for (let i = 1;i <= 8;i++){
+      for (let i = 1;i <= 4;i++){
         if (chessboard[chessmanY - i][chessmanX] === nIsBlack){
           num++
         }
       }
-      for (let i = 1;i <= 8;i++){
+      for (let i = 1;i <= 4;i++){
         if (chessboard[chessmanY + i][chessmanX] === nIsBlack){
           num++
         }
