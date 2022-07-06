@@ -6,7 +6,9 @@ var isBlack = 1,
     chessmanW = 40,
     chessmanH = 40,
     wth,
-    ht
+    ht,
+    realX,
+    realY
 
 function setup(){
   if (navigator.userAgent.indexOf('Android') == -1){
@@ -46,17 +48,19 @@ function draw(){
 onmousedown = function(){
   noStroke()
   if (mouseX <= height && mouseY <= width){
-    chessmanX = Number(Math.abs(Math.round((mouseX - (wth / 14 / 2) / chessmanW)))
-    chessmanY = Number(Math.abs(Math.round((mouseY - (ht / 14 / 2) / chessmanH)))
+    chessmanX = Math.round((mouseX + chessmanW / 2) / (wth / 2))
+    chessmanY = Math.round((mouseY + chessmanH / 2) / (ht / 2))
+    realX = chessmanX * (wth / 14) - (chessmanW / 2)
+    realY = chessmanY * (ht / 14) - (chessmanH / 2)
     if (chessboard[chessmanY - 1][chessmanX - 1] == 0){
       if (isBlack == 1){
         fill(0,0,0)
-        ellipse(chessmanX * (wth / 14),chessmanY * (ht / 14),chessmanW,chessmanH)
+        ellipse(realX,realY,chessmanW,chessmanH)
         chessboard[chessmanY - 1][chessmanX - 1] = 1
         isBlack = 0
       }else{
         fill(250,250,250)
-        ellipse(chessmanX * (wth / 14),chessmanY * (ht / 14),chessmanW,chessmanH)
+        ellipse(realX,realY,chessmanW,chessmanH)
         chessboard[chessmanY - 1][chessmanX - 1] = 2
         isBlack = 1
       }
