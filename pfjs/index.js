@@ -85,12 +85,14 @@ onmousedown = function(){
         var xd = axis[0],yd = axis[1],iii
         for (iii in [0,0,0,0]){
           num += times(chessmanX,chessmanY,xd,yd)
+          console.log(num)
         }
         if (num >= 5){
           var winner = document.createElement("H1")
           winner.appendChild(document.createTextNode(colorr[isBlack-1] + "WIN！"))
           winner.style.color = "red"
-          winner.style.top = "100px"
+          winner.style.top = "0px"
+          winner.style.left = '0px'
           document.body.appendChild(winner)
           console.log(document.createTextNode(colorr[isBlack-1] + "WIN！"))
           return 1
