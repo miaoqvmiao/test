@@ -21,7 +21,7 @@ function setup(){
   var w = width-1
   var h = height-1
   chessboard.length = 15
-  for (;i <= 15;i++){
+  for (;i <= 14;i++){
     chessboard[i] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
   }
   i = 1
