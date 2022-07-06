@@ -50,8 +50,8 @@ onmousedown = function(){
   if (mouseX <= height && mouseY <= width){
     chessmanX = Math.round((mouseX + chessmanW / 2) / (wth / 14))
     chessmanY = Math.round((mouseY + chessmanH / 2) / (ht / 14))
-    realX = chessmanX * (wth / 14) - (chessmanW / 2)
-    realY = chessmanY * (ht / 14) - (chessmanH / 2)
+    realX = chessmanX * (wth / 14)
+    realY = chessmanY * (ht / 14)
     if (chessboard[chessmanY][chessmanX] == 0){
       if (isBlack == 1){
         fill(0,0,0)
