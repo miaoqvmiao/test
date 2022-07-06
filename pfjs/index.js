@@ -55,8 +55,8 @@ function draw(){
 onmousedown = function(){
   noStroke()
   if (mouseX <= height && mouseY <= width){
-    chessmanX = Math.abs(Math.round((mouseX - ((wth + 0) / 14) / 2) / chessmanW))
-    chessmanY = Math.abs(Math.round((mouseY - ((ht + 0) / 14) / 2) / chessmanH))
+    chessmanX = Number(Math.abs(Math.round((mouseX - ((wth + 0) / 14) / 2) / chessmanW)))
+    chessmanY = Number(Math.abs(Math.round((mouseY - ((ht + 0) / 14) / 2) / chessmanH)))
     if (chessboard[chessmanY - 1][chessmanX - 1] == 0){
       if (isBlack == 1){
         fill(0,0,0)
