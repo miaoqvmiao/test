@@ -17,8 +17,8 @@ var isBlack = 1,
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],
     wt = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-    chessmanW = 20,
-    chessmanH = 20,
+    chessmanW = 40,
+    chessmanH = 40,
     wth,
     ht
 
@@ -60,12 +60,12 @@ onmousedown = function(){
     if (chessboard[chessmanY - 1][chessmanX - 1] == 0){
       if (isBlack == 1){
         fill(0,0,0)
-        ellipse(chessmanX * (wth / 14),chessmanY * (ht / 14),chessmanW,chessmanH)
+        ellipse(chessmanX * (wth / 14 / 2),chessmanY * (ht / 14 / 2),chessmanW,chessmanH)
         chessboard[chessmanY - 1][chessmanX - 1] = 1
         isBlack = 0
       }else{
         fill(250,250,250)
-        ellipse(chessmanX * (wth / 14),chessmanY * (ht / 14),chessmanW,chessmanH)
+        ellipse(chessmanX * (wth / 14 / 2),chessmanY * (ht / 14 / 2),chessmanW,chessmanH)
         chessboard[chessmanY - 1][chessmanX - 1] = 2
         isBlack = 1
       }
