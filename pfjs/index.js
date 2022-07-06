@@ -48,7 +48,7 @@ function draw(){
 }
 
 onmousedown = function(){
-  var nisBlack = isBlack
+  var nIsBlack = isBlack
   noStroke()
   if (mouseX <= height && mouseY <= width){
     chessmanX = Math.round((mouseX + chessmanW / 2) / (wth / 14))
