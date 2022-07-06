@@ -10,7 +10,7 @@ var isBlack = 1,
     realX,
     realY,
     dirction = [[1,0],[0,1],[1,1],[-1,1]],
-    colorr = ['White','Black']
+    colorr = ['Black','White']
 
 function setup(){
   if (navigator.userAgent.indexOf('Android') == -1){
@@ -83,12 +83,12 @@ onmousedown = function(){
         }
         if (num >= 5){
           var winner = document.createElement("H1")
-          winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + "WIN！"))
+          winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
           winner.style.color = "red"
           winner.style.top = "0px"
           winner.style.left = '0px'
           document.body.appendChild(winner)
-          console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + "WIN！"))
+          console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
           return 1
         }
         num = 1
@@ -104,12 +104,12 @@ onmousedown = function(){
         }
         if (num >= 5){
           var winner = document.createElement("H1")
-          winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + "WIN！"))
+          winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
           winner.style.color = "red"
           winner.style.top = "0px"
           winner.style.left = '0px'
           document.body.appendChild(winner)
-          console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + "WIN！"))
+          console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
           return 1
         }
         num = 1
@@ -125,12 +125,12 @@ onmousedown = function(){
         }
         if (num >= 5){
           var winner = document.createElement("H1")
-          winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + "WIN！"))
+          winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
           winner.style.color = "red"
           winner.style.top = "0px"
           winner.style.left = '0px'
           document.body.appendChild(winner)
-          console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + "WIN！"))
+          console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
           return 1
         }
         num = 1
@@ -146,12 +146,12 @@ onmousedown = function(){
         }
         if (num >= 5){
           var winner = document.createElement("H1")
-          winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + "WIN！"))
+          winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
           winner.style.color = "red"
           winner.style.top = "0px"
           winner.style.left = '0px'
           document.body.appendChild(winner)
-          console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + "WIN！"))
+          console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
           return 1
         }
       }catch(err){
