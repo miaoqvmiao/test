@@ -48,7 +48,7 @@ function draw(){
 }
 
 var times = function (x,y,xd,yd){
-  var timess
+  var timess = 0
   try{
     for (let i = 1;i <= 4;i++){
       if (chessboard[y + yd * i][x + xd * i] == isBlack){
@@ -89,8 +89,8 @@ onmousedown = function(){
       console.log(chessboard)
       var axis
       var num = 1
-      for (axis of dirction){
-        var xd = axis[0],yd = axis[1],iii
+      for (axis in dirction){
+        var xd = axis[0],yd = axis[1]
         num += times(chessmanX,chessmanY,xd,yd)
         console.log(num)
         if (num >= 5){
@@ -103,7 +103,7 @@ onmousedown = function(){
           console.log(document.createTextNode(colorr[isBlack-1] + "WIN！"))
           return 1
         }
-        num = 0
+        num = 1
       }
     }
   }
