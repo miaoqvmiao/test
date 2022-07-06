@@ -77,6 +77,7 @@ onmousedown = function(){
               num++
             }
           }catch(err){
+            console.log(err)
             break
           }
         }
@@ -86,6 +87,7 @@ onmousedown = function(){
               num++
             }
           }catch(err){
+            console.log(err)
             break
           }
         }
@@ -106,6 +108,7 @@ onmousedown = function(){
               num++
             }
           }catch(err){
+            console.log(err)
             break
           }
         }
@@ -115,6 +118,7 @@ onmousedown = function(){
               num++
             }
           }catch(err){
+            console.log(err)
             break
           }
         }
@@ -135,6 +139,7 @@ onmousedown = function(){
               num++
             }
           }catch(err){
+            console.log(err)
             break
           }
         }
@@ -144,6 +149,7 @@ onmousedown = function(){
               num++
             }
           }catch(err){
+            console.log(err)
             break
           }
         }
@@ -164,6 +170,7 @@ onmousedown = function(){
               num++
             }
           }catch(err){
+            console.log(err)
             break
           }
         }
@@ -173,6 +180,7 @@ onmousedown = function(){
               num++
             }
           }catch(err){
+            console.log(err)
             break
           }
         }
