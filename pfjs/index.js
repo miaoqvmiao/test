@@ -10,7 +10,7 @@ var isBlack = 1,
     realX,
     realY,
     dirction = [[1,0],[0,1],[1,1],[-1,1],[1,-1],[0,-1],[-1,0],[1,-1]],
-    colorr = ['Black','White']
+    colorr = ['White','Black']
 
 function setup(){
   if (navigator.userAgent.indexOf('Android') == -1){
@@ -48,10 +48,14 @@ function draw(){
 }
 
 var times = function (x,y,xd,yd,chessmanColor){
-   if (chessboard[y + yd][x + xd] == chessmanColor){
-     return 1
+   try{
+     if (chessboard[y + yd][x + xd] == chessmanColor){
+       return 1
+     }
+     return 0
+   }catch(err){
+     console.log('Oh, here\'s the edge.')
    }
-   return 0
 }
 
 onmousedown = function(){
