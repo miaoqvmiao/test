@@ -10,7 +10,8 @@ var isBlack = 1,
     realX,
     realY,
     dirction = [[1,0],[0,1],[1,1],[-1,1]],
-    colorr = ['Black','White']
+    colorr = ['Black','White'],
+    isend = 0
 
 function setup(){
   if (navigator.userAgent.indexOf('Android') == -1){
@@ -48,156 +49,158 @@ function draw(){
 }
 
 onmousedown = function(){
-  noStroke()
-  if (mouseX <= height && mouseY <= width){
-    chessmanX = Math.round((mouseX + chessmanW / 2) / (wth / 14))
-    chessmanY = Math.round((mouseY + chessmanH / 2) / (ht / 14))
-    realX = chessmanX * (wth / 14)
-    realY = chessmanY * (ht / 14)
-    if (chessboard[chessmanY][chessmanX] == 0){
-      if (isBlack == 1){
-        fill(0,0,0)
-        ellipse(realX,realY,chessmanW,chessmanH)
-        chessboard[chessmanY][chessmanX] = 1
-        isBlack = 2
-      }else{
-        fill(250,250,250)
-        ellipse(realX,realY,chessmanW,chessmanH)
-        chessboard[chessmanY][chessmanX] = 2
-        isBlack = 1
-      }
-      console.log(chessboard)
-      /*Who is winner*/
-      var nIsBlack = isBlack
-      for (let j of [0]){
-        var num = 1
-        for (let i = 1;i <= 4;i++){
-          try{
-            if (chessboard[chessmanY + i][chessmanX + i] === chessboard[chessmanY][chessmanX]){
-              num++
+  if (isend == 1){
+    noStroke()
+    if (mouseX <= height && mouseY <= width){
+      chessmanX = Math.round((mouseX + chessmanW / 2) / (wth / 14))
+      chessmanY = Math.round((mouseY + chessmanH / 2) / (ht / 14))
+      realX = chessmanX * (wth / 14)
+      realY = chessmanY * (ht / 14)
+      if (chessboard[chessmanY][chessmanX] == 0){
+        if (isBlack == 1){
+          fill(0,0,0)
+          ellipse(realX,realY,chessmanW,chessmanH)
+          chessboard[chessmanY][chessmanX] = 1
+          isBlack = 2
+        }else{
+          fill(250,250,250)
+          ellipse(realX,realY,chessmanW,chessmanH)
+          chessboard[chessmanY][chessmanX] = 2
+          isBlack = 1
+        }
+        console.log(chessboard)
+        /*Who is winner*/
+        var nIsBlack = isBlack
+        for (let j of [0]){
+          var num = 1
+          for (let i = 1;i <= 4;i++){
+            try{
+              if (chessboard[chessmanY + i][chessmanX + i] === chessboard[chessmanY][chessmanX]){
+                num++
+              }
+            }catch(err){
+              console.log(err)
+              break
             }
-          }catch(err){
-            console.log(err)
-            break
           }
-        }
-        for (let i = 1;i <= 4;i++){
-          try{
-            if (chessboard[chessmanY - i][chessmanX - i] === chessboard[chessmanY][chessmanX]){
-              num++
+          for (let i = 1;i <= 4;i++){
+            try{
+              if (chessboard[chessmanY - i][chessmanX - i] === chessboard[chessmanY][chessmanX]){
+                num++
+              }
+            }catch(err){
+              console.log(err)
+              break
             }
-          }catch(err){
-            console.log(err)
-            break
           }
-        }
-        if (num >= 5){
-          var winner = document.createElement("H1")
-          winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
-          winner.style.color = "red"
-          winner.style.top = "0px"
-          winner.style.left = '0px'
-          document.body.appendChild(winner)
-          console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
-          return 1
-        }
-        num = 1
-        for (let i = 1;i <= 4;i++){
-          try{
-            if (chessboard[chessmanY - i][chessmanX + i] === chessboard[chessmanY][chessmanX]){
-              num++
+          if (num >= 5){
+            var winner = document.createElement("H1")
+            winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
+            winner.style.color = "red"
+            winner.style.top = "0px"
+            winner.style.left = '0px'
+            document.body.appendChild(winner)
+            console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
+            return 1
+          }
+          num = 1
+          for (let i = 1;i <= 4;i++){
+            try{
+              if (chessboard[chessmanY - i][chessmanX + i] === chessboard[chessmanY][chessmanX]){
+                num++
+              }
+            }catch(err){
+              console.log(err)
+              break
             }
-          }catch(err){
-            console.log(err)
-            break
           }
-        }
-        for (let i = 1;i <= 4;i++){
-          try{
-            if (chessboard[chessmanY + i][chessmanX - i] === chessboard[chessmanY][chessmanX]){
-              num++
+          for (let i = 1;i <= 4;i++){
+            try{
+              if (chessboard[chessmanY + i][chessmanX - i] === chessboard[chessmanY][chessmanX]){
+                num++
+              }
+            }catch(err){
+              console.log(err)
+              break
             }
-          }catch(err){
-            console.log(err)
-            break
           }
-        }
-        if (num >= 5){
-          var winner = document.createElement("H1")
-          winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
-          winner.style.color = "red"
-          winner.style.top = "0px"
-          winner.style.left = '0px'
-          document.body.appendChild(winner)
-          console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
-          return 1
-        }
-        num = 1
-        for (let i = 1;i <= 4;i++){
-          try{
-            if (chessboard[chessmanY][chessmanX + i] === chessboard[chessmanY][chessmanX]){
-              num++
+          if (num >= 5){
+            var winner = document.createElement("H1")
+            winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
+            winner.style.color = "red"
+            winner.style.top = "0px"
+            winner.style.left = '0px'
+            document.body.appendChild(winner)
+            console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
+            return 1
+          }
+          num = 1
+          for (let i = 1;i <= 4;i++){
+            try{
+              if (chessboard[chessmanY][chessmanX + i] === chessboard[chessmanY][chessmanX]){
+                num++
+              }
+            }catch(err){
+              console.log(err)
+              break
             }
-          }catch(err){
-            console.log(err)
-            break
           }
-        }
-        for (let i = 1;i <= 4;i++){
-          try{
-            if (chessboard[chessmanY][chessmanX - i] === chessboard[chessmanY][chessmanX]){
-              num++
+          for (let i = 1;i <= 4;i++){
+            try{
+              if (chessboard[chessmanY][chessmanX - i] === chessboard[chessmanY][chessmanX]){
+                num++
+              }
+            }catch(err){
+              console.log(err)
+              break
             }
-          }catch(err){
-            console.log(err)
-            break
           }
-        }
-        if (num >= 5){
-          var winner = document.createElement("H1")
-          winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
-          winner.style.color = "red"
-          winner.style.top = "0px"
-          winner.style.left = '0px'
-          document.body.appendChild(winner)
-          console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
-          return 1
-        }
-        num = 1
-        for (let i = 1;i <= 4;i++){
-          try{
-            if (chessboard[chessmanY - i][chessmanX] === chessboard[chessmanY][chessmanX]){
-              num++
+          if (num >= 5){
+            var winner = document.createElement("H1")
+            winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
+            winner.style.color = "red"
+            winner.style.top = "0px"
+            winner.style.left = '0px'
+            document.body.appendChild(winner)
+            console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
+            return 1
+          }
+          num = 1
+          for (let i = 1;i <= 4;i++){
+            try{
+              if (chessboard[chessmanY - i][chessmanX] === chessboard[chessmanY][chessmanX]){
+                num++
+              }
+            }catch(err){
+              console.log(err)
+              break
             }
-          }catch(err){
-            console.log(err)
-            break
           }
-        }
-        for (let i = 1;i <= 4;i++){
-          try{
-            if (chessboard[chessmanY + i][chessmanX] === chessboard[chessmanY][chessmanX]){
-              num++
+          for (let i = 1;i <= 4;i++){
+            try{
+              if (chessboard[chessmanY + i][chessmanX] === chessboard[chessmanY][chessmanX]){
+                num++
+              }
+            }catch(err){
+              console.log(err)
+              break
             }
-          }catch(err){
-            console.log(err)
-            break
           }
-        }
-        if (num >= 5){
-          var winner = document.createElement("H1")
-          winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
-          winner.style.color = "red"
-          winner.style.top = "0px"
-          winner.style.left = '0px'
-          document.body.appendChild(winner)
-          console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
-          return 1
+          if (num >= 5){
+            var winner = document.createElement("H1")
+            winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
+            winner.style.color = "red"
+            winner.style.top = "0px"
+            winner.style.right = '0px'
+            document.body.appendChild(winner)
+            console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
+            return 1
+          }
         }
       }
     }
+    strokeWeight(3)
   }
-  strokeWeight(3)
 }
 
 window.onerror = (message,url,line) => {alert(message + '\nURL:' + url + '\nLine:' + line)}
