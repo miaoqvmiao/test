@@ -9,7 +9,7 @@ var isBlack = 1,
     ht,
     realX,
     realY,
-    dirction = [[1,0],[0,1],[1,1],[-1,1],[1,-1],[0,-1],[-1,0],[1,-1]],
+    dirction = [[1,0],[0,1],[1,1],[-1,1]],
     colorr = ['White','Black']
 
 function setup(){
@@ -48,15 +48,23 @@ function draw(){
 }
 
 var times = function (x,y,xd,yd){
-   try{
-     if (chessboard[y + yd][x + xd] == isBlack){
-       return 1
-     }else{
-       return 0
-     }
-   }catch(err){
-     console.log('Oh, here\'s the edge.')
-   }
+  var timess
+  try{
+    for (let i = 1;i <= 4;i++){
+      if (chessboard[y + yd * i][x + xd * i] == isBlack){
+        timess += 1
+      }else{
+        if (chessboard[y - yd * i][x - xd * i] == isBlack){
+          timess += 1
+        }else{
+          timess += 0
+        }
+      }
+    }
+    return timess
+  }catch(err){
+    console.log('Oh, here\'s the edge.')
+  }
 }
 
 onmousedown = function(){
@@ -83,10 +91,8 @@ onmousedown = function(){
       var num = 1
       for (axis of dirction){
         var xd = axis[0],yd = axis[1],iii
-        for (iii in [0,0,0,0]){
-          num += times(chessmanX,chessmanY,xd,yd)
-          console.log(num)
-        }
+        num += times(chessmanX,chessmanY,xd,yd)
+        console.log(num)
         if (num >= 5){
           var winner = document.createElement("H1")
           winner.appendChild(document.createTextNode(colorr[isBlack-1] + "WIN！"))
@@ -97,6 +103,7 @@ onmousedown = function(){
           console.log(document.createTextNode(colorr[isBlack-1] + "WIN！"))
           return 1
         }
+        num = 0
       }
     }
   }
