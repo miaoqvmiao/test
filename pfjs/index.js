@@ -76,7 +76,7 @@ onmousedown = function(){
             if (chessboard[chessmanY + i][chessmanX + i] === chessboard[chessmanY][chessmanX]){
               num++
             }
-          catch(err){
+          }catch(err){
             break
           }
         }
@@ -85,7 +85,7 @@ onmousedown = function(){
             if (chessboard[chessmanY - i][chessmanX - i] === chessboard[chessmanY][chessmanX]){
               num++
             }
-          catch(err){
+          }catch(err){
             break
           }
         }
@@ -105,7 +105,7 @@ onmousedown = function(){
             if (chessboard[chessmanY - i][chessmanX + i] === chessboard[chessmanY][chessmanX]){
               num++
             }
-          catch(err){
+          }catch(err){
             break
           }
         }
@@ -114,7 +114,7 @@ onmousedown = function(){
             if (chessboard[chessmanY + i][chessmanX - i] === chessboard[chessmanY][chessmanX]){
               num++
             }
-          catch(err){
+          }catch(err){
             break
           }
         }
@@ -134,7 +134,7 @@ onmousedown = function(){
             if (chessboard[chessmanY][chessmanX + i] === chessboard[chessmanY][chessmanX]){
               num++
             }
-          catch(err){
+          }catch(err){
             break
           }
         }
@@ -143,7 +143,7 @@ onmousedown = function(){
             if (chessboard[chessmanY][chessmanX - i] === chessboard[chessmanY][chessmanX]){
               num++
             }
-          catch(err){
+          }catch(err){
             break
           }
         }
@@ -163,7 +163,7 @@ onmousedown = function(){
             if (chessboard[chessmanY - i][chessmanX] === chessboard[chessmanY][chessmanX]){
               num++
             }
-          catch(err){
+          }catch(err){
             break
           }
         }
@@ -172,7 +172,7 @@ onmousedown = function(){
             if (chessboard[chessmanY + i][chessmanX] === chessboard[chessmanY][chessmanX]){
               num++
             }
-          catch(err){
+          }catch(err){
             break
           }
         }
