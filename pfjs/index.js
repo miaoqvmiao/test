@@ -63,7 +63,7 @@ var times = function (x,y,xd,yd){
     }
     return timess
   }catch(err){
-    console.log('Oh, here\'s the edge.')
+    console.log(err)
   }
 }
 
