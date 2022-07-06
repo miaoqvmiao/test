@@ -84,7 +84,7 @@ onmousedown = function(){
         if (num >= 5){
           var winner = document.createElement("H1")
           winner.appendChild(document.createTextNode(colorr[isBlack-1] + "WIN！"))
-          winner.getAttributeNode("style").value="color:red"
+          winner.style.top = "red"
           winner.style.top = "100px"
           document.body.appendChild(winner)
           console.log(document.createTextNode(colorr[isBlack-1] + "WIN！"))
