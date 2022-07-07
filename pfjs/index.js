@@ -49,7 +49,7 @@ function draw(){
 }
 
 onmousedown = function(){
-  if (isend == 1){
+  if (isend != 1){
     noStroke()
     if (mouseX <= height && mouseY <= width){
       chessmanX = Math.round((mouseX + chessmanW / 2) / (wth / 14))
@@ -101,6 +101,7 @@ onmousedown = function(){
             winner.style.left = '0px'
             document.body.appendChild(winner)
             console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
+            isend = 1
             return 1
           }
           num = 1
@@ -132,6 +133,7 @@ onmousedown = function(){
             winner.style.left = '0px'
             document.body.appendChild(winner)
             console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
+            isend = 1
             return 1
           }
           num = 1
@@ -160,9 +162,10 @@ onmousedown = function(){
             winner.appendChild(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
             winner.style.color = "red"
             winner.style.top = "0px"
-            winner.style.left = '0px'
+            winner.style.right = '0px'
             document.body.appendChild(winner)
             console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
+            isend = 1
             return 1
           }
           num = 1
@@ -194,6 +197,7 @@ onmousedown = function(){
             winner.style.right = '0px'
             document.body.appendChild(winner)
             console.log(document.createTextNode(colorr[chessboard[chessmanY][chessmanX]-1] + " WIN！"))
+            isend = 1
             return 1
           }
         }
