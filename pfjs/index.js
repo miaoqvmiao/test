@@ -12,8 +12,8 @@ var isBlack = 1,
     dirction = [[1,0],[0,1],[1,1],[-1,1]],
     colorr = ['Black','White'],
     isend = 0,
-    textSize = 50,
-    textFont
+    ts = 50,
+    tf
 
 function setup(){
   if (navigator.userAgent.indexOf('Android') == -1){
@@ -44,8 +44,8 @@ function setup(){
   ellipse(320,320,7,7)
   wth = w + 1
   ht = h + 1
-  textSize(textSize)
-  //textFont(textFont)
+  textSize(ts)
+  //textFont(tf)
 }
 
 function draw(){
