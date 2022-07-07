@@ -77,6 +77,8 @@ onmousedown = function(){
             try{
               if (chessboard[chessmanY + i][chessmanX + i] === chessboard[chessmanY][chessmanX]){
                 num++
+              }else{
+                break
               }
             }catch(err){
               console.log(err)
@@ -87,6 +89,8 @@ onmousedown = function(){
             try{
               if (chessboard[chessmanY - i][chessmanX - i] === chessboard[chessmanY][chessmanX]){
                 num++
+              }else{
+                break
               }
             }catch(err){
               console.log(err)
@@ -109,6 +113,8 @@ onmousedown = function(){
             try{
               if (chessboard[chessmanY - i][chessmanX + i] === chessboard[chessmanY][chessmanX]){
                 num++
+              }else{
+                break
               }
             }catch(err){
               console.log(err)
@@ -119,6 +125,8 @@ onmousedown = function(){
             try{
               if (chessboard[chessmanY + i][chessmanX - i] === chessboard[chessmanY][chessmanX]){
                 num++
+              }else{
+                break
               }
             }catch(err){
               console.log(err)
@@ -141,6 +149,8 @@ onmousedown = function(){
             try{
               if (chessboard[chessmanY][chessmanX + i] === chessboard[chessmanY][chessmanX]){
                 num++
+              }else{
+                break
               }
             }catch(err){
               console.log(err)
@@ -151,6 +161,8 @@ onmousedown = function(){
             try{
               if (chessboard[chessmanY][chessmanX - i] === chessboard[chessmanY][chessmanX]){
                 num++
+              }else{
+                break
               }
             }catch(err){
               console.log(err)
@@ -173,6 +185,8 @@ onmousedown = function(){
             try{
               if (chessboard[chessmanY - i][chessmanX] === chessboard[chessmanY][chessmanX]){
                 num++
+              }else{
+                break
               }
             }catch(err){
               console.log(err)
@@ -183,6 +197,8 @@ onmousedown = function(){
             try{
               if (chessboard[chessmanY + i][chessmanX] === chessboard[chessmanY][chessmanX]){
                 num++
+              }else{
+                break
               }
             }catch(err){
               console.log(err)
