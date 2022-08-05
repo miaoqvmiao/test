@@ -1,5 +1,5 @@
 name: nodejs
-on: workflow_dispatch
+on: [workflow_dispatch]
 jobs:
   nodejs:
     runs-on: ubuntu-latest
