@@ -1,4 +1,4 @@
-name: node.js Demo
+name: node.jsDemo
 on: workflow_dispatch
 jobs:
   nodejs:
